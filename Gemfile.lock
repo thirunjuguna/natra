@@ -106,7 +106,7 @@ GEM
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
     rainbow (3.0.0)
-    rake (10.5.0)
+    rake (0.9.6)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -160,7 +160,7 @@ DEPENDENCIES
   guard-rubocop
   natra!
   pry
-  rake
+  rake (~> 0)
   rspec
 
 BUNDLED WITH

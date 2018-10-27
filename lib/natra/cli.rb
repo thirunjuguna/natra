@@ -5,7 +5,7 @@ module Natra
     map %w[-v --version] => :version
     # USAGE: Natra -v
     def version
-      say "Natra #{Natra::VERSION::STRING}"
+      say "Natra #{Natra::VERSION}"
     end
     # register(class_name, subcommand_alias, usage_list_string, description_string)
     register Natra::Generators::AppGenerator, 'new', 'new APP_PATH', 'Creates a new Sinatra application'

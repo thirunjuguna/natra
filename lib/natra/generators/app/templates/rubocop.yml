@@ -1,0 +1,79 @@
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - lib/swaggering.rb
+    - api/**
+    - Guardfile
+    - my_app.rb
+    - spec/spec_helper.rb
+    - tmp/**
+
+Documentation:
+  # don't require classes to be documented
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  # don't require frozen literal comment
+  Enabled: false
+
+Encoding:
+  # no need to always specify encoding
+  Enabled: false
+
+AlignParameters:
+  # allow for multi-line methods to have normal indentation.
+  # for example:
+  #
+  # Person.where(
+  #   first_name: 'tom',
+  #   last_name: 'foolery'
+  # )
+  EnforcedStyle: with_fixed_indentation
+
+Layout/AlignParameters:
+  # allow for end of if to be aligned with a variable.
+  # for example:
+  #
+  # foo = if a == b
+  #   'bar'
+  # else
+  #   'baz'
+  # end
+  EnforcedStyle: with_fixed_indentation
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineOperationIndentation:
+  # allow for operations to be indented at two spaces.
+  # for example:
+  #
+  # @valid ||= present &&
+  #   positive?
+  EnforcedStyle: indented
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+ClassAndModuleChildren:
+  # ok to use compact style when modules are predefined.
+  # for example the following is fine so long as we're sure that
+  # module MDB has already been required/defined.
+  #
+  # class MDB::Person; end
+  Enabled: false
+
+Metrics/BlockLength:
+  # Certain DSL use blocks and can be lengthy
+  Exclude:
+    - 'spec/**/*'
+    - 'Guardfile'
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: ()
+    "%i": ()
+    "%w": ()
+
+Style/FormatString:
+  Enabled: false

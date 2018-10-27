@@ -1,0 +1,12 @@
+/tmp
+/log
+/log
+*.swp
+*.swo
+.rspec_status
+coverage
+
+client/Gemfile.lock
+
+secrets.aes
+secrets.env

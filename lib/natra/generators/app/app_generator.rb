@@ -42,10 +42,6 @@ module Natra
       end
 
       def create_public_directory
-        %w{public/stylesheets public/javascripts public/images}.each do |dir|
-          directory dir, File.join(@app_path, dir)
-        end
-
         template "public/favicon.ico", File.join(@app_path, "public/favicon.ico")
       end
 
@@ -76,7 +72,7 @@ module Natra
       end
 
       def create_readme
-        copy_file "README.md", File.join(@app_path, "README.md")
+        template("README.md", File.join(@app_path, "README.md"))
       end
 
       def create_db_config
@@ -95,6 +91,28 @@ module Natra
         template("config/initializers/redis.rb", File.join(@app_path, "config/initializers/redis.rb")) if @redis
       end
 
+      def create_gitignore
+        copy_file "gitignore", File.join(@app_path, '.gitignore')
+      end
+      def create_rspec
+        copy_file 'rspec', File.join(@app_path, '.rspec')
+      end
+      def create_rubocop
+        copy_file 'rubocop.yml', File.join(@app_path, '.rubocop.yml') 
+      end
+      def create_docker
+        copy_file 'Dockerfile',File.join(@app_path, 'Dockerfile')
+      end
+      def create_docker_compose
+        template('docker-compose.yml',File.join(@app_path, "docker-compose.yml"))
+      end
+      def create_guardfile
+        copy_file  'Guardfile',File.join(@app_path, 'Guardfile')
+      end
+      def create_spec_support
+        create_file  File.join(@app_path, "spec/support/", ".keep")
+      end
+      
       def create_capistrano_config
         if @capistrano
           inside(@app_path) do

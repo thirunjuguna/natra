@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+set -e
+
+RACK_ENV=development rake db:create db:migrate --trace
+RACK_ENV=development rake db:seed_fu --trace
+RACK_ENV=test DATABASE_URL=$TEST_DATABASE_URL rake db:create db:migrate --trace
