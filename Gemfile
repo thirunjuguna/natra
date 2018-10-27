@@ -8,6 +8,7 @@ group :development do
   gem "rake"
   gem "pry"
   gem 'guard'
+  gem 'rspec'
   gem 'guard-rubocop'
   gem 'guard-rspec', require: false
 end

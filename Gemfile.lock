@@ -161,7 +161,7 @@ DEPENDENCIES
   natra!
   pry
   rake
-  rspec (~> 3.0)
+  rspec
 
 BUNDLED WITH
    1.16.6
