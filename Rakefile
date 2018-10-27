@@ -1,6 +1,14 @@
+require "rake/testtask"
 require "bundler/gem_tasks"
-require "rspec/core/rake_task"
+require "pry"
 
-RSpec::Core::RakeTask.new(:spec)
+Rake::TestTask.new(:spec) do |test|
+  test.libs << 'lib' << 'spec'
+  test.pattern = 'spec/**/*_spec.rb'
+end
 
 task :default => :spec
+
+task :console do
+  Pry.start
+end

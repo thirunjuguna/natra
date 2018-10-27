@@ -1,6 +1,13 @@
-source "https://rubygems.org"
+source 'https://rubygems.org/'
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
-
-# Specify your gem's dependencies in natra.gemspec
 gemspec
+
+gem 'active_model_serializers', '~> 0.10.0.rc1'
+
+group :development do
+  gem "rake"
+  gem "pry"
+  gem 'guard'
+  gem 'guard-rubocop'
+  gem 'guard-rspec', require: false
+end
