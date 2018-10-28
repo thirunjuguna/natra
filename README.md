@@ -19,9 +19,27 @@ Or install it yourself as:
 
     $ gem install natra
 
-## Usage
+## Commands
+```
+natra -v              # Show Natra version number
+natra help [COMMAND]  # Describe available commands or one specific command
+natra new APP-NAME    # Creates a new Sinatra application
+natra model NAME      # Generate a model
+natra controller NAME # Generate a controller
+natra scaffold NAME   # Generate a model with its associated views and controllers
+```
+The controller generator also have an optional views flag `--no-views` to create controllers without views.
 
-TODO: Write usage instructions here
+## Using Natra
+
+To generate your app:
+
+    natra new APP-NAME
+
+After natra is done generating your app, run `bundle install` from your app's directory:
+
+    cd APP-NAME
+    bundle install
 
 ## Development
 
