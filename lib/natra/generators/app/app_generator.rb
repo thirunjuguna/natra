@@ -36,10 +36,22 @@ module Natra
 
         empty_directory File.join(@app_path, 'db/migrate')
 
-        create_file File.join(@app_path, "lib", ".gitkeep")
+        create_file File.join(@app_path, "lib", ".keep")
         template "config/environment.rb", File.join(@app_path, "config/environment.rb")
       end
+      
+      def create_seeds_file
+        create_file File.join(@app_path, "db", "seeds.rb")
+      end
 
+      def initialize_db
+          copy_file('bin/setup', File.join(@app_path, "bin/setup"))
+      end
+      
+      def uuid_setup
+          template 'db/migrate/add_extensions.rb', File.join(@app_path,"db/migrate/#{Time.now.strftime('%Y%m%d')}0000_add_extensions.rb")
+      end
+  
       def create_public_directory
         template "public/favicon.ico", File.join(@app_path, "public/favicon.ico")
       end
