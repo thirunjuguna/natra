@@ -8,10 +8,10 @@ Gem::Specification.new do |spec|
   spec.name          = 'natra'
   spec.version       = Natra::VERSION
   spec.authors       = ['Thiru Njuguna']
-  spec.email         = ['uriht@outlook.com']
+  spec.email         = ['thirunjuguna@outlook.com']
 
   spec.summary       = 'Natra generate a light weight sinatra application'
-  spec.description   = 'Natra generate a light weight sinatra application.It is ideal for builing micro-services'
+  spec.description   = 'Natra generate a light weight sinatra application.It\'s ideal for building micro-services'
   spec.homepage      = 'https://github.com/thirunjuguna/natra'
   spec.license       = 'MIT'
 

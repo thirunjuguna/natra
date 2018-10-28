@@ -1,7 +1,8 @@
 # Natra
 [![Coverage Status](https://coveralls.io/repos/github/thirunjuguna/natra/badge.svg?branch=master)](https://coveralls.io/github/thirunjuguna/natra?branch=master)
-[![Build Status](https://travis-ci.com/thirunjuguna/natra.svg?branch=master)](https://travis-ci.com/thirunjuguna/natra)
-
+[![Build Status](https://travis-ci.com/thirunjuguna/natra.svg?branch=master)](https://travis-ci.com/thirunjuguna/natra) 
+[![Maintainability](https://api.codeclimate.com/v1/badges/e76bbd27a1c4cb8911ae/maintainability)](https://codeclimate.com/github/thirunjuguna/natra/maintainability)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/450f5da9d33d4adca897563ec759c1b2)](https://www.codacy.com/app/thirunjuguna/natra?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=thirunjuguna/natra&amp;utm_campaign=Badge_Grade)
 
 ## Installation
 
@@ -49,7 +50,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/natra. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/thirunjuguna/natra. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -57,4 +58,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Natra project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/natra/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Natra project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/thirunjuguna/natra/blob/master/CODE_OF_CONDUCT.md).
