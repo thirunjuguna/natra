@@ -10,35 +10,13 @@ services:
       - .:/usr/src/app
     ports:
       - '9292:9292'
-    <%- if message_producers? || !skip_db? -%>
     links:
-    <%- end -%>
-    <%- unless skip_db? -%>
       - db
-    <%- end -%>
-    <%- if message_producers? -%>
-      - broker
-    <%- end -%>
     env_file: secrets.env
-  <%- unless skip_db? -%>
   db:
+    <%- if @database=='postgres' -%>
     image: postgres:10-alpine
     ports:
       - "54329:5432"
     env_file: secrets.env
-  <%- end -%>
-  <%- if message_producers? -%>
-  broker:
-    hostname: broker
-    image: rabbitmq:management-alpine
-    environment:
-      RABBITMQ_DEFAULT_PASS: admin
-      RABBITMQ_DEFAULT_USER: admin
-      RABBITMQ_DEFAULT_VHOST: vhost
-    ports:
-      - '4369:4369'
-      - '5671:5671'
-      - '5672:5672'
-      - '25672:25672'
-      - '15672:15672' # <- web
-  <%- end -%>
+    <%- end -%>

@@ -1,10 +1,7 @@
 AllCops:
   TargetRubyVersion: 2.5
   Exclude:
-    - lib/swaggering.rb
-    - api/**
     - Guardfile
-    - my_app.rb
     - spec/spec_helper.rb
     - tmp/**
 
