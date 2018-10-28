@@ -1,5 +1,22 @@
 # <%= @name.camel_case %> service
 
+## Commands
+```
+natra -v              # Show Natra version number
+natra help [COMMAND]  # Describe available commands or one specific command
+natra new APP-NAME    # Creates a new Sinatra application
+natra model NAME      # Generate a model
+natra controller NAME # Generate a controller
+natra scaffold NAME   # Generate a model with its associated views and controllers
+```
+The controller generator also have an optional views flag `--no-views` to create controllers without views.
+
+## Using Natra
+
+To generate your app:
+
+    natra new APP-NAME
+
 ## Development
 
 This project is configured to run in Docker containers facilitated by `docker-compose`. [nib](https://github.com/technekes/nib) is our tool of choice for interacting with `docker-compose` in development.

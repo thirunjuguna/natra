@@ -101,16 +101,19 @@ module Natra
         copy_file 'rubocop.yml', File.join(@app_path, '.rubocop.yml') 
       end
       def create_docker
-        copy_file 'Dockerfile',File.join(@app_path, 'Dockerfile')
+        copy_file 'Dockerfile', File.join(@app_path, 'Dockerfile')
       end
       def create_docker_compose
-        template('docker-compose.yml',File.join(@app_path, "docker-compose.yml"))
+        template('docker-compose.yml', File.join(@app_path, "docker-compose.yml"))
       end
       def create_guardfile
         copy_file  'Guardfile',File.join(@app_path, 'Guardfile')
       end
       def create_spec_support
         create_file  File.join(@app_path, "spec/support/", ".keep")
+      end
+      def create_secrets
+        template('secrets.env',File.join(@app_path, "secrets.env"))
       end
       
       def create_capistrano_config
