@@ -6,6 +6,6 @@ workers Integer(ENV['WEB_CONCURRENCY'] || 1)
 
 preload_app!
 
-environment ENV['RACK_ENV'] || 'development'
+environment ENV['SINATRA_ENV'] || 'development'
 
 bind "tcp://0.0.0.0:#{port}"

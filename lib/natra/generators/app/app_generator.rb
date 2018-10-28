@@ -9,7 +9,6 @@ module Natra
       desc "Creates a new Sinatra application"
       argument :name, :type => :string, :desc => "The name of the new application"
       class_option :capistrano, :type => :boolean, :desc => "Include Capistrano configuration"
-      class_option :database, :aliases => "-d", :default => "", :desc => "The type of database to use"
       class_option :redis, :type => :boolean, :desc => "Include Redis configuration"
       class_option :rvm, :type => :boolean, :desc => "Create .ruby-version (ruby-2.1.0) and .ruby-gemset"
       class_option :bundle, :type => :boolean, :desc => "Run bundle after generating the app"
@@ -76,11 +75,11 @@ module Natra
       end
 
       def create_db_config
-        template("config/db.yml", File.join(@app_path, "config/db.yml")) unless @database.empty?
+        template("config/db.yml", File.join(@app_path, "config/db.yml"))
       end
 
       def create_database_initializer
-        template("config/initializers/database.rb", File.join(@app_path, "config/initializers/database.rb")) unless @database.empty?
+        template("config/initializers/database.rb", File.join(@app_path, "config/initializers/database.rb"))
       end
 
       def create_redis_config
