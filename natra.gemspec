@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Thiru Njuguna']
   spec.email         = ['uriht@outlook.com']
 
-  spec.summary       = 'Write a short summary, because RubyGems requires one.'
-  spec.description   = 'Write a longer description or delete this line.'
+  spec.summary       = 'Natra generate a light weight sinatra application'
+  spec.description   = 'Natra generate a light weight sinatra application.It is ideal for builing micro-services'
   spec.homepage      = 'https://github.com/thirunjuguna/natra'
   spec.license       = 'MIT'
 
@@ -34,8 +34,7 @@ Gem::Specification.new do |spec|
   spec.executables = ['natra']
   spec.require_paths = ['lib']
   spec.add_development_dependency 'bundler', '~> 1.16'
-  spec.add_development_dependency 'coveralls', '~> 0'
-  spec.add_development_dependency 'rake','~> 0'
+  spec.add_development_dependency 'rake', '~> 0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_runtime_dependency('activesupport', '~> 5.0')
   spec.add_runtime_dependency('thor', '~> 0.18')
