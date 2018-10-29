@@ -1,4 +1,4 @@
-# <%= @name.camel_case %> service
+# <%= @name %> service
 
 ## Commands
 ```

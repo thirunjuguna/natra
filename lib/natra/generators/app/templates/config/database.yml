@@ -1,0 +1,21 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: ENV['DEV_DATABASE']
+  pool: 2
+  username: ENV['DEV_USERNAME']
+  password: ENV['DEV_PASSWORD']
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: ENV['PROD_DATABASE']
+  pool: 2
+  username: ENV['PROD_USERNAME']
+  password: ENV['PROD_PASSWORD']
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: ENV['TEST_DATABASE']
+  pool: 2
+  username: ENV['TEST_USERNAME']
+  password: ENV['TEST_PASSWORD']

@@ -2,6 +2,6 @@
 
 set -e
 
-SINATRA_ENV=development rake db:create db:migrate --trace
-SINATRA_ENV=development rake db:seed_fu --trace
-SINATRA_ENV=test DATABASE_URL=$TEST_DATABASE_URL rake db:create db:migrate --trace
+RACK_ENV=development rake db:create db:migrate --trace
+RACK_ENV=development rake db:seed_fu --trace
+RACK_ENV=test DATABASE_URL=$TEST_DATABASE_URL rake db:create db:migrate --trace
