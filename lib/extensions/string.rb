@@ -4,10 +4,7 @@ module Natra
       def camel_case
         return self.gsub(/^./) { |l| l.capitalize } if !match(/[_-]/)
         altered_self = self.downcase.capitalize
-        altered_self.scan(/[_-][a-zA-Z]/).each do |match|
-          altered_self.gsub!(match, match[1].upcase)
-        end
-
+        altered_self.scan(/[_-][a-zA-Z]/).each { |match| altered_self.gsub!(match, match[1].upcase) }
         altered_self
       end
 

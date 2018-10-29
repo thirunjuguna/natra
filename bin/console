@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
-
-require "bundler/setup"
-require "natra"
-require "pry"
+require 'bundler/setup'
+require 'natra'
+require 'pry'
 Pry.start
