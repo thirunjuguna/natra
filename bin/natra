@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-
 $:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "..", "lib")))
-
 require "natra"
-
 Natra::CLI.start
