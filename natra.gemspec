@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['thirunjuguna@outlook.com']
 
   spec.summary       = 'Natra generate a light weight sinatra application'
-  spec.description   = 'Natra generate a light weight sinatra application.It\'s ideal for building micro-services'
+  spec.description   = 'Natra generate a light weight sinatra application.It\'s ideal for building containerized micro-services with postgres database'
   spec.homepage      = 'https://github.com/thirunjuguna/natra'
   spec.license       = 'MIT'
   if spec.respond_to?(:metadata)
