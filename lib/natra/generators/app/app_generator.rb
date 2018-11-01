@@ -145,8 +145,6 @@ module Natra
           git init
           git add .
           docker-compose build --pull
-          docker-compose run --rm web bundle
-          #{'nib setup web'}
         SCRIPT
       end
     end
