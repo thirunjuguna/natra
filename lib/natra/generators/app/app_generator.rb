@@ -117,7 +117,7 @@ module Natra
       end
 
       def create_capistrano_config
-        inside(@app_path) {run('cap install')} if @capistrano
+        inside(@app_path) { run('cap install') } if @capistrano
       end
 
       def create_rvm_gemset
@@ -136,6 +136,18 @@ module Natra
 
       def install_dependencies
         inside(@app_path) { run('bundle') if @bundle }
+      end
+
+      def initialize_app
+        system <<~SCRIPT
+          cd #{@app_path}
+          #{'chmod +x bin/setup'}
+          git init
+          git add .
+          docker-compose build --pull
+          docker-compose run --rm web bundle
+          #{'nib setup web'}
+        SCRIPT
       end
     end
   end
