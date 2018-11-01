@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: ENV['DEV_DATABASE']
+  pool: 2
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: ENV['PROD_DATABASE']
+  pool: 2
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: ENV['TEST_DATABASE']
+  pool: 2

@@ -14,7 +14,7 @@ module Natra
       def setup
         @app_path = name.directory_name
         @name     = name.file_name
-        options.each {|key, value| instance_variable_set "@#{key}".to_sym, value}
+        options.each { |key, value| instance_variable_set "@#{key}".to_sym, value }
       end
 
       def self.source_root
@@ -73,11 +73,7 @@ module Natra
       end
 
       def create_db_config
-        template('config/db.yml', File.join(@app_path, 'config/db.yml'))
-      end
-
-      def create_database_initializer
-        template('config/initializers/database.rb', File.join(@app_path, 'config/initializers/database.rb'))
+        template('config/database.yml', File.join(@app_path, 'config/database.yml'))
       end
 
       def create_redis_config
@@ -121,7 +117,7 @@ module Natra
       end
 
       def create_capistrano_config
-        inside(@app_path) {run('cap install')} if @capistrano
+        inside(@app_path) { run('cap install') } if @capistrano
       end
 
       def create_rvm_gemset
@@ -135,11 +131,23 @@ module Natra
       end
 
       def initialize_git_repo
-        inside(@app_path) {run('git init .') if @git}
+        inside(@app_path) { run('git init .') if @git }
       end
 
       def install_dependencies
-        inside(@app_path) {run('bundle') if @bundle}
+        inside(@app_path) { run('bundle') if @bundle }
+      end
+
+      def initialize_app
+        system <<~SCRIPT
+          cd #{@app_path}
+          #{'chmod +x bin/setup'}
+          git init
+          git add .
+          docker-compose build --pull
+          docker-compose run --rm web bundle
+          #{'nib setup web'}
+        SCRIPT
       end
     end
   end

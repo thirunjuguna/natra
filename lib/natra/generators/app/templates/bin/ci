@@ -1,6 +1,0 @@
-#! /usr/bin/env bash
-
-set -e
-
-SINATRA_ENV=test DATABASE_URL=$TEST_DATABASE_URL rake db:create db:migrate --trace
-
