@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['thirunjuguna@outlook.com']
 
   spec.summary       = 'Natra generate a light weight sinatra application'
-  spec.description   = 'Natra generate a light weight sinatra application.It\'s ideal for building containerized micro-services with postgres database'
+  spec.description   = 'Natra generate a light weight sinatra application.It\'s ideal for building containerized api services with postgres database'
   spec.homepage      = 'https://github.com/thirunjuguna/natra'
   spec.license       = 'MIT'
   if spec.respond_to?(:metadata)
@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   end
   spec.executables = ['natra']
   spec.require_paths = ['lib']
-  spec.add_development_dependency 'bundler', '~> 1.16'
+  spec.add_development_dependency 'bundler', '~> 2.0'
   spec.add_runtime_dependency('activesupport', '~> 5.0')
   spec.add_runtime_dependency('thor', '~> 0.18')
 end

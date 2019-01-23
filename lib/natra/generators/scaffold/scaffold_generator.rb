@@ -1,4 +1,4 @@
-require "thor/group"
+require 'thor/group'
 require 'active_support/inflector'
 module Natra
   module Generators
