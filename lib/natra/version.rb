@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Natra
-  VERSION = '0.0.8'.freeze
+  VERSION = '1.9.0'.freeze
 end

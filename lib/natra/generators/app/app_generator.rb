@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'thor/group'
 module Natra
   module Generators
@@ -22,7 +24,7 @@ module Natra
       end
 
       def create_empty_directories
-        %w[config/initializers lib spec].each {|dir| empty_directory File.join(@app_path, dir)}
+        %w[config/initializers lib spec app/services].each { |dir| empty_directory File.join(@app_path, dir) }
         empty_directory File.join(@app_path, 'db/migrate')
         create_file File.join(@app_path, 'lib', '.keep')
         template 'config/environment.rb', File.join(@app_path, 'config/environment.rb')
@@ -45,7 +47,7 @@ module Natra
       end
 
       def create_app_directory
-        %w[app/controllers app/views app/models].each {|dir| directory dir, File.join(@app_path, dir)}
+        %w[app/controllers app/views app/models].each { |dir| directory dir, File.join(@app_path, dir) }
       end
 
       def create_app_spec
@@ -122,7 +124,7 @@ module Natra
 
       def create_rvm_gemset
         if @rvm
-          create_file(File.join(@app_path, '.ruby-version'), 'ruby-2.1.0')
+          create_file(File.join(@app_path, '.ruby-version'), 'ruby-2.5.3')
           create_file(File.join(@app_path, '.ruby-gemset'), @app_path)
 
           @bundle = false
@@ -141,7 +143,7 @@ module Natra
       def initialize_app
         system <<~SCRIPT
           cd #{@app_path}
-          #{'chmod +x bin/setup'}
+          chmod +x bin/setup
           git init
           git add .
           docker-compose build --pull

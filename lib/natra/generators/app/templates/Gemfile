@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'http://rubygems.org'
 ruby '2.5.3'
 gem 'bcrypt'
@@ -6,17 +8,17 @@ gem 'natra'
 gem 'oj'
 gem 'pg', '~> 0.21.0'
 gem 'puma'
-gem 'rake'
 gem 'rack-timeout'
+gem 'rake'
 gem 'require_all'
-gem 'seed-fu'
 gem 'scout_apm'
+gem 'seed-fu'
 gem 'sinatra'
-gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
+gem 'sinatra-activerecord', require: 'sinatra/activerecord'
 gem 'tux'
 group :development, :test do
-  gem 'pry-byebug'
   gem 'pry'
+  gem 'pry-byebug'
 end
 group :test do
   gem 'awesome_print'
@@ -26,7 +28,7 @@ group :test do
   gem 'faker'
   gem 'guard-rspec'
   gem 'guard-rubocop'
-  gem 'simplecov'
   gem 'rack-test'
   gem 'rspec'
+  gem 'simplecov'
 end
