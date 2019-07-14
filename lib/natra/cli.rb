@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'thor'
 module Natra
   class CLI < Thor
@@ -12,6 +14,7 @@ module Natra
     register Natra::Generators::ModelGenerator, 'model', 'model NAME', 'Generate a model'
     register Natra::Generators::ControllerGenerator, 'controller', 'controller NAME', 'Generate a controller'
     register Natra::Generators::ScaffoldGenerator, 'scaffold', 'scaffold NAME', 'Generate a model with its associated views and controllers'
+    register Natra::Generators::ServiceGenerator, 'service_object', 'service_object NAME', 'Generate a service object'
 
     def self.exit_on_failure
       true

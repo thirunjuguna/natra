@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 threads_count = Integer(ENV['PUMA_MAX_THREADS'] || 5)
 port          = Integer(ENV['PORT'] || 9292)
 

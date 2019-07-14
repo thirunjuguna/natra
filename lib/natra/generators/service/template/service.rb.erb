@@ -1,0 +1,11 @@
+class <%= class_name %>
+  attr_reader :args
+
+  def initialize(*args)
+    @args = args
+  end
+
+  def call
+    args
+  end
+end
